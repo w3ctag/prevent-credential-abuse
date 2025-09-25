@@ -23,7 +23,7 @@ var respecConfig = {
   ],
   group: "tag",
   wgPublicList: "www-tag",
-  github: "w3ctag/web-no-papers",
+  github: "w3ctag/prevent-credential-abuse",
   format: "markdown",
     localBiblio: {
     "AADHAAR-BANKS": {
@@ -179,6 +179,33 @@ and trade-offs that arise from designs.
 The design of systems can affect how they operate
 in ways that has a meaningful impact on how people live.
 Designs that empower people can help reduce the potential for harm.
+
+
+### Concrete Harms {#harms}
+
+Even a perfectly designed system for credentials
+creates significant new opportunities for harm
+to individual privacy and autonomy.
+
+*   Increased availability of credentials for use in surveillance,
+    both commercial and government;
+    see [[[#tracking]]] and [[[#tracking-cred]]].
+
+*   The potential for individuals to be excluded or marginalized
+    when it comes to doing business or participating online;
+    see [[[#exclusion]]].
+
+*   Greater exposure to risk of data breach,
+    as information is requested and held by more entities
+    those entities each might be subject to attack.
+
+*   Reduction in individual autonomy
+    in terms of how individuals are able to control
+    what personal information is revealed to sites they interact with.
+
+*   No way for people to hold sites accountable
+    for how those sites request and use credentials;
+    see [[[#auth]]].
 
 
 ## Abuse of Identity Information {#reasons}
@@ -417,8 +444,10 @@ Even if laws only permit the use of digital credentials as a convenience,
 there is a risk that no alternative means of access to services are provided.
 This leads to exclusion.
 
-It should not be possible to refuse service to a person
+It is unacceptable to refuse service to a person
 based on their refusal or inability to provide a digital credential.
+Technical standards therefore should not facilitate discrimination
+based on someone not presenting a credential.
 This is aligned with such principles
 as [not revealing when assistive technologies are in use](https://www.w3.org/TR/design-principles/#do-not-expose-use-of-assistive-tech)
 or [non-retaliation](https://www.w3.org/TR/privacy-principles/#non-retaliation).
@@ -531,12 +560,16 @@ Communicating the implications can be particularly difficult
 when credentials are linkable
 or reveal metadata, such as the issuer identity.
 
-Developing a better understanding of what is appropriate
-for a given situation
-will take time.
-Developing the necessary understanding of different uses of new technology &mdash;
-and then evolving norms to handle those situations &mdash;
-is not something that can be rushed.
+It could take time for user agents,
+including wallets,
+to learn how to adequately inform their users
+about the tradeoffs of presenting a particular credential.
+We therefore encourage early deployments to be prepared to adjust
+
+*   what questions are asked,
+*   what is presented to help inform the choice
+    (including information drawn from external sources), and
+*   which software components or user agents are responsible for asking.
 
 
 ### Authorizing Sites {#auth}
@@ -546,7 +579,7 @@ when that level of proof provides user benefit.
 Sites need to be accountable to their users
 for their use of credentials.
 
-The architecture specified in the European Union’s [digital identity eIDAS regulation](https://www.european-digital-identity-regulation.com/Preamble_11_to_20_%28Regulation_EU_2024_1183%29.html)
+The architecture specified in the European Union’s digital identity eIDAS regulation [[EIDAS2]]
 envisions not only the issuance of digital credentials to individuals,
 but also the explicit authorization of the businesses and service providers
 who request those credentials.
@@ -558,7 +591,8 @@ These entities are then only able to request the information they received appro
 This design is intended to ensure that businesses and agencies cannot request arbitrary personal data,
 and that their ability to do so is constrained, transparent, and subject to oversight.
 
-This depends on having a system for transparency [[EIDAS2]]:
+This depends on having a system for transparency,
+as outlined in recital clause 17 and Article 5b(2) of [[EIDAS2]]:
 
 > relying parties should provide information regarding the data that they will request,
 > if any, in order to provide their services and the reason for the request.
@@ -606,7 +640,8 @@ that is necessary to answer a request.
 For example, user agents should omit
 parts of a credential that can be technically withheld,
 including information about any credentials that the user didn't select.
-This aligns with the TAG's [Design Principle](https://www.w3.org/TR/design-principles/#data-minimization) and [Privacy Principle](https://www.w3.org/TR/privacy-principles/#data-minimization) on data minimization.
+This aligns with the TAG's [Design Principle](https://www.w3.org/TR/design-principles/#data-minimization)
+and [Privacy Principle](https://www.w3.org/TR/privacy-principles/#data-minimization) on data minimization.
 
 Individuals with more than one nationality,
 when traveling across international borders,
