@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en" dir="ltr"><head>
 <meta charset="utf-8">
-<meta name="generator" content="ReSpec 35.5.1">
+<meta name="generator" content="ReSpec 35.6.0">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <style>
 dfn{cursor:pointer}
@@ -235,20 +235,20 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       "id": "personhood"
     }
   },
-  "publishISODate": "2025-09-25T00:00:00.000Z",
-  "generatedSubtitle": "W3C Draft TAG Finding 25 September 2025"
+  "publishISODate": "2025-10-23T00:00:00.000Z",
+  "generatedSubtitle": "W3C Draft TAG Finding 23 October 2025"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/base.css"></head>
 <body class="informative h-entry"><div class="head">
     <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
   </a></p>
     <h1 id="title" class="title">Preventing Abuse of Digital Credentials</h1> 
-    <p id="w3c-state"><a href="https://www.w3.org/standards/types#draft-finding">W3C Draft TAG Finding</a> <time class="dt-published" datetime="2025-09-25">25 September 2025</time></p>
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#draft-finding">W3C Draft TAG Finding</a> <time class="dt-published" datetime="2025-10-23">23 October 2025</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
         <dt>This version:</dt><dd>
-                <a class="u-url" href="https://www.w3.org/2001/tag/doc/draft-finding-prevent-credential-abuse-20250925/">https://www.w3.org/2001/tag/doc/draft-finding-prevent-credential-abuse-20250925/</a>
+                <a class="u-url" href="https://www.w3.org/2001/tag/doc/draft-finding-prevent-credential-abuse-20251023/">https://www.w3.org/2001/tag/doc/draft-finding-prevent-credential-abuse-20251023/</a>
               </dd>
         <dt>Latest published version:</dt><dd>
                 <a href="https://www.w3.org/2001/tag/doc/prevent-credential-abuse/">https://www.w3.org/2001/tag/doc/prevent-credential-abuse/</a>
@@ -579,6 +579,11 @@ due to factors outside their control.</li>
 <li>Systems that include the ability to revoke credentials
 can be abused by attackers
 to forcibly exclude people.</li>
+<li>Credentials can contain information that cannot be withheld.
+ Revealing that information
+ might enable discrimination,
+ even if the information revealed is unrelated to the purpose
+ for which the credential is presented.</li>
 </ul>
 <p>In some cases,
 such as Aadhaar (<a href="#aadhaar" data-matched-text="[[[#aadhaar]]]" class="sec-ref"><bdi class="secno">3.4 </bdi>Case Study: Aadhaar</a>),
@@ -641,6 +646,7 @@ that might lead to market consolidation is better.</p>
 While the universality of a generic solution is appealing,
 each use case might require a different type of solution.
 Different solutions can have dramatically different privacy characteristics.</p>
+<p>Websites must only request the information they need.</p>
 <p>The properties of different approaches need to be understood and matched to needs.
 A possible <a href="https://w3ctag.github.io/privacy-principles/#data-minimization">data minimization</a> approach might choose to use selective disclosure,
 so that people can choose what is disclosed to sites.
@@ -687,7 +693,11 @@ We therefore encourage early deployments to be prepared to adjust</p>
 (including information drawn from external sources), and</li>
 <li>which software components or user agents are responsible for asking.</li>
 </ul>
-</section><section id="authorizing-sites"><div class="header-wrapper"><h3 id="auth"><bdi class="secno">5.2 </bdi>Authorizing Sites</h3><a class="self-link" href="#auth" aria-label="Permalink for Section 5.2"></a></div><p>The architecture specified in the European Union’s digital identity eIDAS regulation [<cite><a class="bibref" data-link-type="biblio" href="#bib-eidas2" title="Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework">EIDAS2</a></cite>]
+</section><section id="authorizing-sites"><div class="header-wrapper"><h3 id="auth"><bdi class="secno">5.2 </bdi>Authorizing Sites</h3><a class="self-link" href="#auth" aria-label="Permalink for Section 5.2"></a></div><p>Websites must only request digital credentials
+when that level of proof provides user benefit.
+Sites need to be accountable to their users
+for their use of credentials.</p>
+<p>The architecture specified in the European Union’s digital identity eIDAS regulation [<cite><a class="bibref" data-link-type="biblio" href="#bib-eidas2" title="Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework">EIDAS2</a></cite>]
 envisions not only the issuance of digital credentials to individuals,
 but also the explicit authorization of the businesses and service providers
 who request those credentials.</p>
@@ -733,6 +743,13 @@ This might include credentials that include claims about inherent traits of a pe
 such as their name, appearance, age (<a href="#age-verification" data-matched-text="[[[#age-verification]]]" class="sec-ref"><bdi class="secno">3.5 </bdi>Age Verification</a>),
 or even personhood (<cite><a data-matched-text="[[[PERSONHOOD]]]" href="https://arxiv.org/abs/2408.07892">Personhood credentials: Artificial intelligence and the value of privacy-preserving tools to distinguish who is real online</a></cite>).</p>
 </section><section id="multiple-national-credentials"><div class="header-wrapper"><h3 id="x5-4-multiple-national-credentials"><bdi class="secno">5.4 </bdi>Multiple National Credentials</h3><a class="self-link" href="#multiple-national-credentials" aria-label="Permalink for Section 5.4"></a></div>
+<p>User agents should only present the minimum information
+that is necessary to answer a request.
+For example, user agents should omit
+parts of a credential that can be technically withheld,
+including information about any credentials that the user didn't select.
+This aligns with the TAG's <a href="https://www.w3.org/TR/design-principles/#data-minimization">Design Principle</a>
+and <a href="https://www.w3.org/TR/privacy-principles/#data-minimization">Privacy Principle</a> on data minimization.</p>
 <p>Individuals with more than one nationality,
 when traveling across international borders,
 have the choice of which credential (passport) to present.
@@ -780,7 +797,8 @@ as wallets prove that they can be
 effective advocates for the interests of their users.</p>
 </section></section><section id="call-to-action"><div class="header-wrapper"><h2 id="x6-call-to-action"><bdi class="secno">6. </bdi>Call to Action</h2><a class="self-link" href="#call-to-action" aria-label="Permalink for Section 6."></a></div>
 <p>The TAG supports the work on digital credentials.
-And we also encourage the groups working in this space to consider all the
+That work provides an opportunity to address some of the issues this document identifies.</p>
+<p>We encourage the groups working in this space to consider all the
 risks associated with these technologies with open eyes, and to develop mitigations
 where possible. We encourage threat modelling to understand how these technologies
 can be misused and potentially lead to unintended and negative societal consequences.</p>
