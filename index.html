@@ -117,7 +117,7 @@ var[data-type]::after{content:attr(data-type);transform:translateX(-50%) transla
 var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 </style>
 <script id="initialUserConfig" type="application/json">{
-  "specStatus": "draft-finding",
+  "specStatus": "finding",
   "editors": [
     {
       "name": "Daniel Appelquist",
@@ -235,20 +235,20 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       "id": "personhood"
     }
   },
-  "publishISODate": "2025-10-23T00:00:00.000Z",
-  "generatedSubtitle": "W3C Draft TAG Finding 23 October 2025"
+  "publishISODate": "2025-11-15T00:00:00.000Z",
+  "generatedSubtitle": "W3C TAG Finding 15 November 2025"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/base.css"></head>
 <body class="informative h-entry"><div class="head">
     <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
   </a></p>
     <h1 id="title" class="title">Preventing Abuse of Digital Credentials</h1> 
-    <p id="w3c-state"><a href="https://www.w3.org/standards/types#draft-finding">W3C Draft TAG Finding</a> <time class="dt-published" datetime="2025-10-23">23 October 2025</time></p>
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#finding">W3C TAG Finding</a> <time class="dt-published" datetime="2025-11-15">15 November 2025</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
         <dt>This version:</dt><dd>
-                <a class="u-url" href="https://www.w3.org/2001/tag/doc/draft-finding-prevent-credential-abuse-20251023/">https://www.w3.org/2001/tag/doc/draft-finding-prevent-credential-abuse-20251023/</a>
+                <a class="u-url" href="https://www.w3.org/2001/tag/doc/finding-prevent-credential-abuse-20251115/">https://www.w3.org/2001/tag/doc/finding-prevent-credential-abuse-20251115/</a>
               </dd>
         <dt>Latest published version:</dt><dd>
                 <a href="https://www.w3.org/2001/tag/doc/prevent-credential-abuse/">https://www.w3.org/2001/tag/doc/prevent-credential-abuse/</a>
@@ -309,7 +309,9 @@ doing irreparable harm to individual autonomy online.</p>
 <section id="sotd" class="introductory"><h2>Status of This Document</h2>
 
 
-<p>This is a draft TAG finding and does not yet represent TAG consensus.</p>
+<p>This document is an agreed finding
+and reflects the consensus of the
+<a href="https://www.w3.org/2001/tag/"><abbr title="Technical Architecture Group">TAG</abbr></a>.</p>
 </section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#background"><bdi class="secno">1. </bdi>Background</a></li><li class="tocline"><a class="tocxref" href="#finding-summary"><bdi class="secno">2. </bdi>Finding Summary</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#harms"><bdi class="secno">2.1 </bdi>Concrete Harms</a></li></ol></li><li class="tocline"><a class="tocxref" href="#reasons"><bdi class="secno">3. </bdi>Abuse of Identity Information</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#tracking"><bdi class="secno">3.1 </bdi>Tracking with Legal Identity</a></li><li class="tocline"><a class="tocxref" href="#tracking-cred"><bdi class="secno">3.2 </bdi>Tracking Inherent to Credential Formats</a></li><li class="tocline"><a class="tocxref" href="#overuse"><bdi class="secno">3.3 </bdi>Overuse of Identity</a></li><li class="tocline"><a class="tocxref" href="#aadhaar"><bdi class="secno">3.4 </bdi>Case Study: Aadhaar</a></li><li class="tocline"><a class="tocxref" href="#age"><bdi class="secno">3.5 </bdi>Age Verification</a></li></ol></li><li class="tocline"><a class="tocxref" href="#exclusion"><bdi class="secno">4. </bdi>Exclusion</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#central-trust"><bdi class="secno">4.1 </bdi>Centralization of Trust</a></li><li class="tocline"><a class="tocxref" href="#centralization-of-control"><bdi class="secno">4.2 </bdi>Centralization of Control</a></li></ol></li><li class="tocline"><a class="tocxref" href="#use-cases-and-technical-options"><bdi class="secno">5. </bdi>Use Cases and Technical Options</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#auth-use"><bdi class="secno">5.1 </bdi>Authorizing Use</a></li><li class="tocline"><a class="tocxref" href="#auth"><bdi class="secno">5.2 </bdi>Authorizing Sites</a></li><li class="tocline"><a class="tocxref" href="#improving-inclusion"><bdi class="secno">5.3 </bdi>Improving Inclusion</a></li><li class="tocline"><a class="tocxref" href="#multiple-national-credentials"><bdi class="secno">5.4 </bdi>Multiple National Credentials</a></li><li class="tocline"><a class="tocxref" href="#avoiding-dependence"><bdi class="secno">5.5 </bdi>Avoiding Dependence</a></li><li class="tocline"><a class="tocxref" href="#wallets-as-an-emerging-class-of-user-agent"><bdi class="secno">5.6 </bdi>Wallets as an Emerging Class of User Agent</a></li></ol></li><li class="tocline"><a class="tocxref" href="#call-to-action"><bdi class="secno">6. </bdi>Call to Action</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">A.1 </bdi>Informative references</a></li></ol></li></ol></nav>
 
 <section id="background"><div class="header-wrapper"><h2 id="x1-background"><bdi class="secno">1. </bdi>Background</h2><a class="self-link" href="#background" aria-label="Permalink for Section 1."></a></div>
@@ -329,7 +331,7 @@ for websites to access proof of legal identity.
 This convenience leads to a range of implications for privacy,
 as noted in a recent objection
 to the formation of the Federated Identity Working Group [<cite><a class="bibref" data-link-type="biblio" href="#bib-objection" title="[/wg/fedid] Formal Objection (charter review)">OBJECTION</a></cite>].</p>
-<p>The TAG believes that the addition of government-issued digital credentials
+<p>The <abbr title="Technical Architecture Group">TAG</abbr> believes that the addition of government-issued digital credentials
 to the web has great potential to cause the harms listed in the objection:</p>
 <ul>
 <li>Increased sharing of personal data
@@ -351,7 +353,7 @@ that these concerns be addressed in the work of the Working Group.
 This document provides a more thorough exploration
 of these issues.</p>
 </section><section id="finding-summary"><div class="header-wrapper"><h2 id="x2-finding-summary"><bdi class="secno">2. </bdi>Finding Summary</h2><a class="self-link" href="#finding-summary" aria-label="Permalink for Section 2."></a></div>
-<p>The TAG believes that the addition of government-issued digital credentials to the web
+<p>The <abbr title="Technical Architecture Group">TAG</abbr> believes that the addition of government-issued digital credentials to the web
 has great potential for harm.</p>
 <p>The benefits of digital credentials
 must be aligned with the <a href="https://www.w3.org/TR/design-principles/#priority-of-constituencies">web user's needs</a>.
@@ -368,7 +370,7 @@ in the course of its normal operation.
 Use of credentials should be exceptional,
 only when required,
 and always on a person's own terms.</p>
-<p>The TAG therefore encourages people integrating digital credentials with the web
+<p>The <abbr title="Technical Architecture Group">TAG</abbr> therefore encourages people integrating digital credentials with the web
 to pay special attention to the societal impact of digital credentials.
 <abbr title="World Wide Web Consortium">W3C</abbr> specifications need to do more than raising awareness of risks
 and trade-offs that arise from designs.
@@ -454,12 +456,12 @@ across any contexts where a person has provided that same identifier,
 online or offline.
 The resulting profiles are then used for many purposes
 including advertising, credit ratings, and market analysis.</p>
-<p>The TAG regards <a href="https://www.w3.org/2001/tag/doc/unsanctioned-tracking/">unsanctioned tracking as unacceptable</a>
+<p>The <abbr title="Technical Architecture Group">TAG</abbr> regards <a href="https://www.w3.org/2001/tag/doc/unsanctioned-tracking/">unsanctioned tracking as unacceptable</a>
 and has advocated for technical measures that curtail these practices.
-The TAG has also unequivocally
+The <abbr title="Technical Architecture Group">TAG</abbr> has also unequivocally
 <a href="https://www.w3.org/2001/tag/doc/web-without-3p-cookies/">condemned cross-site cookies and called for browsers to disable them</a>.</p>
 <p>Technical measures to prevent tracking are consistent
-with the TAG's <a href="https://w3ctag.github.io/privacy-principles/">documented principles for privacy</a>.
+with the <abbr title="Technical Architecture Group">TAG</abbr>'s <a href="https://w3ctag.github.io/privacy-principles/">documented principles for privacy</a>.
 These principles articulate why privacy is essential to maintaining personal autonomy.
 The same high-level principles are shared
 by the many jurisdictions that have implemented data protection legislation.
@@ -544,8 +546,8 @@ that motivate the use of legal identity where it is available.
 Privacy therefore depends on having an equivalently strong countervailing force.</p>
 </section><section id="age-verification"><div class="header-wrapper"><h3 id="age"><bdi class="secno">3.5 </bdi>Age Verification</h3><a class="self-link" href="#age" aria-label="Permalink for Section 3.5"></a></div><p>A number of governments have chosen to mandate the use of age verification
 for access to certain online services.
-The TAG acknowledges that age verification is highly contentious ([<cite><a class="bibref" data-link-type="biblio" href="#bib-suppress" title="The &quot;Segregate-and-Suppress&quot; Approach to Regulating Child Safety Online">SUPPRESS</a></cite>]).
-A key outcome of the joint TAG workshop [<cite><a class="bibref" data-link-type="biblio" href="#bib-age-ws" title="IAB/W3C Workshop on Age-Based Restrictions on Content Access">AGE-WS</a></cite>]
+The <abbr title="Technical Architecture Group">TAG</abbr> acknowledges that age verification is highly contentious ([<cite><a class="bibref" data-link-type="biblio" href="#bib-suppress" title="The &quot;Segregate-and-Suppress&quot; Approach to Regulating Child Safety Online">SUPPRESS</a></cite>]).
+A key outcome of the joint <abbr title="Technical Architecture Group">TAG</abbr> workshop [<cite><a class="bibref" data-link-type="biblio" href="#bib-age-ws" title="IAB/W3C Workshop on Age-Based Restrictions on Content Access">AGE-WS</a></cite>]
 was that there are a few unresolved challenges
 and a need for further cooperation between stakeholders.</p>
 <p>Different jurisdictions vary in how they require age verification,
@@ -749,7 +751,7 @@ that is necessary to answer a request.
 For example, user agents should omit
 parts of a credential that can be technically withheld,
 including information about any credentials that the user didn't select.
-This aligns with the TAG's <a href="https://www.w3.org/TR/design-principles/#data-minimization">Design Principle</a>
+This aligns with the <abbr title="Technical Architecture Group">TAG</abbr>'s <a href="https://www.w3.org/TR/design-principles/#data-minimization">Design Principle</a>
 and <a href="https://www.w3.org/TR/privacy-principles/#data-minimization">Privacy Principle</a> on data minimization.</p>
 <p>Individuals with more than one nationality,
 when traveling across international borders,
@@ -797,7 +799,7 @@ Over time, we expect these other UAs to re-evaluate the need for extra safeguard
 as wallets prove that they can be
 effective advocates for the interests of their users.</p>
 </section></section><section id="call-to-action"><div class="header-wrapper"><h2 id="x6-call-to-action"><bdi class="secno">6. </bdi>Call to Action</h2><a class="self-link" href="#call-to-action" aria-label="Permalink for Section 6."></a></div>
-<p>The TAG supports the work on digital credentials.
+<p>The <abbr title="Technical Architecture Group">TAG</abbr> supports the work on digital credentials.
 That work provides an opportunity to address some of the issues this document identifies.</p>
 <p>We encourage the groups working in this space to consider all the
 risks associated with these technologies with open eyes, and to develop mitigations
